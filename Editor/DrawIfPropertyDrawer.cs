@@ -27,17 +27,18 @@ public class DrawIfPropertyDrawer : PropertyDrawer
         drawIf = attribute as DrawIfAttribute;
 
 		bool conditionMet = false;
-		//if (!drawIf.multible) {
-		//}
-		//else {
-			
-		//}
-		// Get the compared field
-		comparedField = property.serializedObject.FindProperty(drawIf.ComparedPropertyName);
-		// Get the value of the compared field.
-		object comparedFieldValue = comparedField.GetValue<object>();
-		// Is the condition met? Should the field be drawn?
-		conditionMet = DrawIfExtension.DrawIfExtension.DrawIfConditionCheck(property, comparedField, comparedFieldValue, drawIf.ComparedValue, drawIf.ComparisonType);
+		if (!drawIf.multible) {
+			// Get the compared field
+			comparedField = property.serializedObject.FindProperty(drawIf.ComparedPropertyName);
+			// Get the value of the compared field.
+			object comparedFieldValue = comparedField.GetValue<object>();
+			// Is the condition met? Should the field be drawn?
+			conditionMet = DrawIfExtension.DrawIfExtension.DrawIfConditionCheck(property, comparedField, comparedFieldValue, drawIf.ComparedValue, drawIf.ComparisonType);
+		}
+		else {
+
+		}
+		
         
 
         // The height of the property should be defaulted to the default height.

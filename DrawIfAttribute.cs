@@ -32,12 +32,11 @@ public class DrawIfAttribute : PropertyAttribute
         DisablingType = disablingType;
 		multible = false;
     }
-	//public DrawIfAttribute(string[] comparedPropertyName, object[] comparedValue, ComparisonType comparisonType = ComparisonType.Equals, DisablingType disablingType = DisablingType.DontDraw)
- //   {
- //       ComparedPropertyNames = comparedPropertyName;
- //       ComparedValues = comparedValue;
- //       ComparisonType = comparisonType;
- //       DisablingType = disablingType;
-	//	multible = true;
- //   }
+	public DrawIfAttribute(string[] comparedPropertyName, object[] comparedValue, ComparisonType comparisonType = ComparisonType.Equals, DisablingType disablingType = DisablingType.DontDraw) {
+		ComparedPropertyNames = comparedPropertyName;
+		ComparedValues = comparedValue;
+		ComparisonType = comparisonType;
+		DisablingType = disablingType;
+		multible = true;
+	}
 }
