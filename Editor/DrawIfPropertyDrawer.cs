@@ -1,8 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using Utilities;
-using Exceptions;
-using DrawIfExtension;
 
 [CustomPropertyDrawer(typeof(DrawIfAttribute))]
 public class DrawIfPropertyDrawer : PropertyDrawer
@@ -36,7 +34,25 @@ public class DrawIfPropertyDrawer : PropertyDrawer
 			conditionMet = DrawIfExtension.DrawIfExtension.DrawIfConditionCheck(property, comparedField, comparedFieldValue, drawIf.ComparedValue, drawIf.ComparisonType);
 		}
 		else {
-
+			bool state = false;
+			if (drawIf.isList) {
+				foreach (string field in drawIf.ComparedPropertyNameList) {
+					comparedField = property.serializedObject.FindProperty(field);
+					object comparedFieldValue = comparedField.GetValue<object>();
+					state = DrawIfExtension.DrawIfExtension.DrawIfConditionCheck(property, comparedField, comparedFieldValue, drawIf.ComparedValue, drawIf.ComparisonType);
+					if (!state) { break; }
+				}
+			}
+			else {
+				foreach (string field in drawIf.ComparedPropertyNameArray) {
+					comparedField = property.serializedObject.FindProperty(field);
+					object comparedFieldValue = comparedField.GetValue<object>();
+					state = DrawIfExtension.DrawIfExtension.DrawIfConditionCheck(property, comparedField, comparedFieldValue, drawIf.ComparedValue, drawIf.ComparisonType);
+					if (!state) { break; }
+				}
+			}
+			
+			conditionMet = state;
 		}
 		
         
