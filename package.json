@@ -24,6 +24,6 @@
   },
   "repository": {
         "type": "git",
-        "url": "github.com/CTN-Originals/Unity-DrawIf-Attributes"
+        "url": "git@github.com:CTN-Originals/Unity-DrawIf-Attributes.git"
     }
 }
