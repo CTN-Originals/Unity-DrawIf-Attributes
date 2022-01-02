@@ -1,25 +1,28 @@
 {
-    "name": "com.ctn-originals.unity-drawif-attributes",
-    "version": "1.0.0",
-    "description": "Tool for a multiscene workflow, involving atomic scenes which are additively loaded.",
-    "displayName": "Multiscene",
-    "unity": "2020.3",
-    "author": {
-        "name": "Alex Lopez Vega",
-        "email": "alex.lopez.ve@gmail.com"
-    },
-    "keywords": [
-        "multiscene",
-        "multiscene workflow",
-        "workflow",
-        "additive",
-        "additively",
-        "atomic",
-        "scene",
-        "atomic scene"
-    ],
-    "license": "MIT",
-    "repository": {
+  "name": "com.ctn-originals.unity-drawif-attributes",
+  "version": "1.0.1",
+  "displayName": "Unity DrawIf Attributes",
+  "description": "Adds custom attributes an property drawers to conditionally show/hide variables in the inspector.",
+  "unity": "2020.3",
+  "unityRelease": "16f1",
+  "documentationUrl": "https://github.com/CTN-Originals/Unity-DrawIf-Attributes",
+  "changelogUrl": "https://github.com/CTN-Originals/Unity-DrawIf-Attributes",
+  "licensesUrl": "",
+  "dependencies": {},
+ "keywords": [
+    "Attributes",
+    "PropertyDrawer",
+    "ConditionalField",
+    "DrawIf",
+    "Formatting",
+    "CustomInspector"
+  ],
+  "author": {
+    "name": "CTN-Originals",
+    "email": "info@ctn-originals.com",
+    "url": "https://ctn-originals.com"
+  },
+  "repository": {
         "type": "git",
         "url": "https://github.com/CTN-Originals/Unity-DrawIf-Attributes"
     }
