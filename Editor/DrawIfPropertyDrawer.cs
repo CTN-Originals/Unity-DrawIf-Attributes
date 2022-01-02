@@ -4,62 +4,65 @@ using Utilities;
 using Exceptions;
 using DrawIfExtension;
 
-[CustomPropertyDrawer(typeof(DrawIfAttribute))]
-public class DrawIfPropertyDrawer : PropertyDrawer
+namespace com.ctn_originals.unity_drawif_attributes.Editor
 {
-    // Reference to the attribute on the property.
-    DrawIfAttribute drawIf;
-
-    // Field that is being compared.
-    SerializedProperty comparedField;
-
-    // Height of the property.
-    private float propertyHeight;
-
-    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    [CustomPropertyDrawer(typeof(DrawIfAttribute))]
+    public class DrawIfPropertyDrawer : PropertyDrawer
     {
-        return propertyHeight;
-    }
+        // Reference to the attribute on the property.
+        DrawIfAttribute drawIf;
 
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-    {
-        // Set the global variables.
-        drawIf = attribute as DrawIfAttribute;
+        // Field that is being compared.
+        SerializedProperty comparedField;
 
-		bool conditionMet = false;
-		//if (!drawIf.multible) {
-		//}
-		//else {
-			
-		//}
-		// Get the compared field
-		comparedField = property.serializedObject.FindProperty(drawIf.ComparedPropertyName);
-		// Get the value of the compared field.
-		object comparedFieldValue = comparedField.GetValue<object>();
-		// Is the condition met? Should the field be drawn?
-		conditionMet = DrawIfExtension.DrawIfExtension.DrawIfConditionCheck(property, comparedField, comparedFieldValue, drawIf.ComparedValue, drawIf.ComparisonType);
-        
+        // Height of the property.
+        private float propertyHeight;
 
-        // The height of the property should be defaulted to the default height.
-        propertyHeight = base.GetPropertyHeight(property, label);
-        
-        // If the condition is met, simply draw the field. Else...
-        if (conditionMet)
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            EditorGUI.PropertyField(position, property, label);
+            return propertyHeight;
         }
-        else
+
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            //...check if the disabling type is read only. If it is, draw it disabled, else, set the height to zero.
-            if (drawIf.DisablingType == DisablingType.ReadOnly)
+            // Set the global variables.
+            drawIf = attribute as DrawIfAttribute;
+
+            bool conditionMet = false;
+            //if (!drawIf.multible) {
+            //}
+            //else {
+                
+            //}
+            // Get the compared field
+            comparedField = property.serializedObject.FindProperty(drawIf.ComparedPropertyName);
+            // Get the value of the compared field.
+            object comparedFieldValue = comparedField.GetValue<object>();
+            // Is the condition met? Should the field be drawn?
+            conditionMet = DrawIfExtension.DrawIfExtension.DrawIfConditionCheck(property, comparedField, comparedFieldValue, drawIf.ComparedValue, drawIf.ComparisonType);
+            
+
+            // The height of the property should be defaulted to the default height.
+            propertyHeight = base.GetPropertyHeight(property, label);
+            
+            // If the condition is met, simply draw the field. Else...
+            if (conditionMet)
             {
-                GUI.enabled = false;
                 EditorGUI.PropertyField(position, property, label);
-                GUI.enabled = true;
             }
             else
             {
-                propertyHeight = 0f;
+                //...check if the disabling type is read only. If it is, draw it disabled, else, set the height to zero.
+                if (drawIf.DisablingType == DisablingType.ReadOnly)
+                {
+                    GUI.enabled = false;
+                    EditorGUI.PropertyField(position, property, label);
+                    GUI.enabled = true;
+                }
+                else
+                {
+                    propertyHeight = 0f;
+                }
             }
         }
     }

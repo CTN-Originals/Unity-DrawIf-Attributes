@@ -1,0 +1,14 @@
+{
+    "name": "com.ctn_originals.unity_drawif_attributes",
+    "rootNamespace": "com.ctn_originals.unity_drawif_attributes",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

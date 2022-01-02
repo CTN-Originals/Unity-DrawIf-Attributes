@@ -1,0 +1,16 @@
+{
+    "name": "com.ctn_originals.unity_drawif_attributes.Editor",
+    "rootNamespace": "com.ctn_originals.unity_drawif_attributes.Editor",
+    "references": [
+        "GUID:b4561c1766c5853419a680fce547765f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
