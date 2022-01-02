@@ -20,6 +20,10 @@
   "author": {
     "name": "CTN-Originals",
     "email": "info@ctn-originals.com",
-    "url": "https://github.com/CTN-Originals/Unity-DrawIf-Attributes"
-  }
+    "url": "https://ctn-originals.com"
+  },
+  "repository": {
+        "type": "git",
+        "url": "https://github.com/CTN-Originals/Unity-DrawIf-Attributes"
+    }
 }
