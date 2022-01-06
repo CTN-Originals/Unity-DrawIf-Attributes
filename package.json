@@ -1,6 +1,6 @@
 {
   "name": "com.ctn-originals.unity-drawif-attributes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Unity DrawIf Attributes",
   "description": "Adds custom attributes an property drawers to conditionally show/hide variables in the inspector.",
   "unity": "2020.3",

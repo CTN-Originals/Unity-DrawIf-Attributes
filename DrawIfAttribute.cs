@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using com.ctn_originals.unity_drawif_attributes;
 
 /// <summary>
 /// Draws the field/property ONLY if the copared property compared by the comparison type with the value of comparedValue returns true.
@@ -14,7 +15,7 @@ public class DrawIfAttribute : PropertyAttribute
     public ComparisonType ComparisonType { get; private set; }
     public DisablingType DisablingType { get; private set; }
 
-	public bool multible;
+    public bool multible;
 
 
     /// <summary>
@@ -30,14 +31,14 @@ public class DrawIfAttribute : PropertyAttribute
         ComparedValue = comparedValue;
         ComparisonType = comparisonType;
         DisablingType = disablingType;
-		multible = false;
+        multible = false;
     }
-	//public DrawIfAttribute(string[] comparedPropertyName, object[] comparedValue, ComparisonType comparisonType = ComparisonType.Equals, DisablingType disablingType = DisablingType.DontDraw)
- //   {
- //       ComparedPropertyNames = comparedPropertyName;
- //       ComparedValues = comparedValue;
- //       ComparisonType = comparisonType;
- //       DisablingType = disablingType;
-	//	multible = true;
- //   }
+    //public DrawIfAttribute(string[] comparedPropertyName, object[] comparedValue, ComparisonType comparisonType = ComparisonType.Equals, DisablingType disablingType = DisablingType.DontDraw)
+//   {
+//       ComparedPropertyNames = comparedPropertyName;
+//       ComparedValues = comparedValue;
+//       ComparisonType = comparisonType;
+//       DisablingType = disablingType;
+    //	multible = true;
+//   }
 }
