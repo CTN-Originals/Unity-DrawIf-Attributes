@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.ctn_originals.unity_drawif_attributes;
 
 
 public class DrawIfDemo : MonoBehaviour

@@ -1,6 +1,7 @@
 ﻿using System;
 using Utilities;
 using Exceptions;
+using com.ctn_originals.unity_drawif_attributes;
 
 public class NumericType : IEquatable<NumericType>
 {

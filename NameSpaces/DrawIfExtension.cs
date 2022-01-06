@@ -1,5 +1,6 @@
 using Exceptions;
 using System;
+using com.ctn_originals.unity_drawif_attributes;
 using UnityEditor;
 using UnityEngine;
 using Utilities;
@@ -13,7 +14,7 @@ namespace DrawIfExtension {
 		//	public static object coparedValue;
 		//}
 
-		public static bool DrawIfConditionCheck(SerializedProperty property, SerializedProperty conparedField, object comparedFieldValue, object comparedValue, ComparisonType comparisonType) {
+		public static bool DrawIfConditionCheck(UnityEditor.SerializedProperty property, UnityEditor.SerializedProperty conparedField, object comparedFieldValue, object comparedValue, ComparisonType comparisonType) {
 			bool conditionMet = false;
 
 			// References to the values as numeric types.
